@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <tabs>
+        <Tab text="Numerical methods">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="512.0">
+                    <children>
+                        <LineChart fx:id="chart1" layoutX="214.0" layoutY="14.0" prefHeight="258.0" prefWidth="572.0">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chart2" layoutX="214.0" layoutY="299.0" prefHeight="258.0" prefWidth="572.0">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                        <Label layoutX="28.0" layoutY="22.0" text="Initial conditions" />
+                        <TextField layoutX="62.0" layoutY="49.0" prefHeight="27.0" prefWidth="67.0" text="1" fx:id="x0" />
+                        <Label layoutX="28.0" layoutY="54.0" text="x0" />
+                        <Label layoutX="27.0" layoutY="92.0" text="y0" />
+                        <TextField fx:id="y0" layoutX="63.0" layoutY="87.0" prefHeight="27.0" prefWidth="67.0" text="1" />
+                        <Label layoutX="31.0" layoutY="130.0" text="X" />
+                        <TextField layoutX="63.0" layoutY="125.0" prefHeight="27.0" prefWidth="67.0" text="10.2" fx:id="xmax" />
+                        <Label layoutX="27.0" layoutY="170.0" text="Numerical parameters" />
+                        <Label layoutX="31.0" layoutY="202.0" text="N" />
+                        <TextField fx:id="steps" layoutX="64.0" layoutY="197.0" prefHeight="27.0" prefWidth="67.0" text="10" />
+                        <CheckBox fx:id="exact" layoutX="28.0" layoutY="240.0" mnemonicParsing="false" selected="true" text="Exact" />
+                        <CheckBox fx:id="euler" layoutX="28.0" layoutY="265.0" mnemonicParsing="false" selected="true" text="Euler" />
+                        <CheckBox fx:id="ei" layoutX="28.0" layoutY="290.0" mnemonicParsing="false" text="Euler improved" />
+                        <CheckBox fx:id="rk" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" text="Runge-Kutta" />
+                        <Button fx:id="apply1" layoutX="26.0" layoutY="354.0" mnemonicParsing="false" onAction="#onRender1ButtonClicked" text="Apply" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Truncation errors">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <LineChart fx:id="chart3" layoutX="222.0" layoutY="14.0" prefHeight="331.0" prefWidth="564.0">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                        <Label layoutX="51.0" layoutY="27.0" text="n" />
+                        <Label layoutX="54.0" layoutY="66.0" text="N" />
+                        <TextField fx:id="n" layoutX="88.0" layoutY="22.0" prefWidth="67" text="5" />
+                        <TextField fx:id="N" layoutX="88.0" layoutY="61.0" prefWidth="67" text="30" />
+                        <Button fx:id="apply2" layoutX="53.0" layoutY="242.0" mnemonicParsing="false" onAction="#onErrorButtonClick" text="Apply" />
+                  <CheckBox fx:id="errore" layoutX="53.0" layoutY="110.0" mnemonicParsing="false" text="Euler" />
+                  <CheckBox fx:id="errorie" layoutX="52.0" layoutY="140.0" mnemonicParsing="false" text="Improved Euler" />
+                  <CheckBox fx:id="errorrk" layoutX="52.0" layoutY="171.0" mnemonicParsing="false" text="Runge-Kutta" />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
